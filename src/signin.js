@@ -59,6 +59,10 @@ class Signin extends React.Component {
     this.setState({ phone2: event.target.value });
   };
 
+  onPhone3Change = (event) => {
+    this.setState({ phone3: event.target.value });
+  };
+
   onEmail1Change = (event) => {
     this.setState({ email1: event.target.value });
   };
@@ -69,10 +73,6 @@ class Signin extends React.Component {
 
   onEmail3Change = (event) => {
     this.setState({ email3: event.target.value });
-  };
-
-  onPhone3Change = (event) => {
-    this.setState({ phone3: event.target.value });
   };
 
   onPassword1Change = (event) => {
