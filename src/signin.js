@@ -18,6 +18,9 @@ class Signin extends React.Component {
       phone1: "",
       phone2: "",
       phone3: "",
+      password1: "",
+      password2: "",
+      password3: "",
       domain1: "",
       domain2: "",
       domain3: "",
@@ -48,6 +51,14 @@ class Signin extends React.Component {
     this.setState({ Name3: event.target.value });
   };
 
+  onPhone1Change = (event) => {
+    this.setState({ phone1: event.target.value });
+  };
+
+  onPhone2Change = (event) => {
+    this.setState({ phone2: event.target.value });
+  };
+
   onEmail1Change = (event) => {
     this.setState({ email1: event.target.value });
   };
@@ -60,15 +71,19 @@ class Signin extends React.Component {
     this.setState({ email3: event.target.value });
   };
 
-  onPhone1Change = (event) => {
+  onPhone3Change = (event) => {
+    this.setState({ phone3: event.target.value });
+  };
+
+  onPassword1Change = (event) => {
     this.setState({ phone1: event.target.value });
   };
 
-  onPhone2Change = (event) => {
+  onPassword2Change = (event) => {
     this.setState({ phone2: event.target.value });
   };
 
-  onPhone3Change = (event) => {
+  onPassword3Change = (event) => {
     this.setState({ phone3: event.target.value });
   };
 
@@ -82,14 +97,6 @@ class Signin extends React.Component {
 
   onDomain3Change = (event) => {
     this.setState({ domain3: event.target.value });
-  };
-
-  onDomain4Change = (event) => {
-    this.setState({ domain4: event.target.value });
-  };
-
-  onDomain5Change = (event) => {
-    this.setState({ domain5: event.target.value });
   };
 
   onSubmit = () => {
@@ -109,11 +116,12 @@ class Signin extends React.Component {
         email1: this.state.email1,
         email2: this.state.email2,
         email3: this.state.email3,
+        password1: this.state.password1,
+        password2: this.state.password2,
+        password3: this.state.password3,
         domain1: this.state.domain1,
         domain2: this.state.domain2,
         domain3: this.state.domain3,
-        domain4: this.state.domain4,
-        domain5: this.state.domain5,
       }),
     });
   };
@@ -340,6 +348,7 @@ class Signin extends React.Component {
                     <option value="mango">Mango</option>
                   </select>
                 </div>
+
                 <div className="pt5">
                   <label className="db pl30 fw6 lh-copy f3">
                     Domain and preference{" "}
@@ -359,6 +368,7 @@ class Signin extends React.Component {
                     <option value="mango">Mango</option>
                   </select>
                 </div>
+
                 <div className="pt5">
                   <label className="db pl30 fw6 lh-copy f3">
                     Domain and preference{" "}
@@ -378,51 +388,13 @@ class Signin extends React.Component {
                     <option value="mango">Mango</option>
                   </select>
                 </div>
-                <div className="pt5">
-                  <label className="db pl30 fw6 lh-copy f3">
-                    Domain and preference{" "}
-                  </label>
-                  <input
-                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-40"
-                    type="text"
-                    name="domain4"
-                    onChange={this.onDomain4Change}
-                  />
-                  <select className=" pa2 ">
-                    <option value="grapefruit">Grapefruit</option>
-                    <option value="lime">Lime</option>
-                    <option selected value="coconut">
-                      Coconut
-                    </option>
-                    <option value="mango">Mango</option>
-                  </select>
-                </div>
-                <div className="pt5">
-                  <label className="db pl30 fw6 lh-copy f3">
-                    Domain and preference{" "}
-                  </label>
-                  <input
-                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-40"
-                    type="text"
-                    name="domain5"
-                    onChange={this.onDomain5Change}
-                  />
-                  <select className=" pa2 ">
-                    <option value="grapefruit">Grapefruit</option>
-                    <option value="lime">Lime</option>
-                    <option selected value="coconut">
-                      Coconut
-                    </option>
-                    <option value="mango">Mango</option>
-                  </select>
-                </div>
 
                 <div className="ma5">
                   <input
                     className="br3 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f3 dib"
                     type="submit"
                     value="Submit"
-                    //onClick={this.onSubmit}
+                    onClick={this.onSubmit}
                   />
                 </div>
               </fieldset>
