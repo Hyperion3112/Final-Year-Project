@@ -10,27 +10,37 @@ class Signin2 extends React.Component {
     };
   }
 
-  onemailchange = (event) => {
+  onEmailChange = (event) => {
     this.setState({
-      email: event.target.value,
+      signInEmail: event.target.value,
     });
   };
-  onpasswordchange = (event) => {
+
+  onPasswordChange = (event) => {
     this.setState({
-      password: event.target.value,
+      signInPassword: event.target.value,
     });
   };
 
   onSubmit = () => {
     console.log(this.state);
+    this.props.onRouteChange("home");
     fetch("http://localhost:3000/signin2", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password,
+        email: this.state.signInEmail,
+        password: this.state.signInPassword,
       }),
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data === "success") {
+          this.props.onRouteChange("home");
+        } else {
+          this.props.onRouteChange("signin");
+        }
+      });
   };
 
   render() {
@@ -46,7 +56,7 @@ class Signin2 extends React.Component {
                   Email
                 </label>
                 <input
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
                   type="email"
                   name="email-address"
                   id="email-address"
@@ -58,7 +68,7 @@ class Signin2 extends React.Component {
                   Password
                 </label>
                 <input
-                  className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
                   type="password"
                   name="password"
                   id="password"
@@ -68,10 +78,10 @@ class Signin2 extends React.Component {
             </fieldset>
             <div className="">
               <input
-                onClick={this.onSubmitSignIn}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 type="submit"
-                value="Sign in"
+                value="Sign In"
+                onClick={this.onSubmit}
               />
             </div>
             <div className="lh-copy mt3">
