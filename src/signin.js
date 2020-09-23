@@ -134,7 +134,6 @@ class Signin extends React.Component {
             <form>
               <fieldset className="">
                 <legend className="f1">Group Formation Form</legend>
-
                 <div className="shadow-5 mt5 pb4 ">
                   <div className="inaline w-33 left center block ">
                     <label className="fw6 f3" htmlFor="Roll">
@@ -342,9 +341,7 @@ class Signin extends React.Component {
                   <select className=" pa2 ">
                     <option value="grapefruit">Grapefruit</option>
                     <option value="lime">Lime</option>
-                    <option selected value="coconut">
-                      Coconut
-                    </option>
+                    <option value="coconut">Coconut</option>
                     <option value="mango">Mango</option>
                   </select>
                 </div>
@@ -362,9 +359,7 @@ class Signin extends React.Component {
                   <select className=" pa2 ">
                     <option value="grapefruit">Grapefruit</option>
                     <option value="lime">Lime</option>
-                    <option selected value="coconut">
-                      Coconut
-                    </option>
+                    <option value="coconut">Coconut</option>
                     <option value="mango">Mango</option>
                   </select>
                 </div>
@@ -382,9 +377,7 @@ class Signin extends React.Component {
                   <select className=" pa2 ">
                     <option value="grapefruit">Grapefruit</option>
                     <option value="lime">Lime</option>
-                    <option selected value="coconut">
-                      Coconut
-                    </option>
+                    <option value="coconut">Coconut</option>
                     <option value="mango">Mango</option>
                   </select>
                 </div>
