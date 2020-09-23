@@ -338,7 +338,7 @@ class Signin extends React.Component {
                     name="domain1"
                     onChange={this.onDomain1Change}
                   />
-                  <select className=" pa2 ">
+                  <select className="pa2">
                     <option value="grapefruit">Grapefruit</option>
                     <option value="lime">Lime</option>
                     <option value="coconut">Coconut</option>
@@ -356,7 +356,7 @@ class Signin extends React.Component {
                     name="domain2"
                     onChange={this.onDomain2Change}
                   />
-                  <select className=" pa2 ">
+                  <select className="pa2">
                     <option value="grapefruit">Grapefruit</option>
                     <option value="lime">Lime</option>
                     <option value="coconut">Coconut</option>
@@ -374,7 +374,7 @@ class Signin extends React.Component {
                     name="domain3"
                     onChange={this.onDomain3Change}
                   />
-                  <select className=" pa2 ">
+                  <select className="pa2">
                     <option value="grapefruit">Grapefruit</option>
                     <option value="lime">Lime</option>
                     <option value="coconut">Coconut</option>
