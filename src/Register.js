@@ -4,15 +4,39 @@ class Register extends React.Component {
   constructor() {
     super();
     this.state = {
+      name: "",
       roll: "",
+      branch: "",
+      div: "",
+      phone: "",
       email: "",
       password: "",
     };
   }
 
+  onNameChange = (event) => {
+    this.setState({
+      name: event.target.value,
+    });
+  };
   onRollChange = (event) => {
     this.setState({
       roll: event.target.value,
+    });
+  };
+  onBranchChange = (event) => {
+    this.setState({
+      branch: event.target.value,
+    });
+  };
+  onDivChange = (event) => {
+    this.setState({
+      div: event.target.value,
+    });
+  };
+  onPhoneChange = (event) => {
+    this.setState({
+      phone: event.target.value,
     });
   };
   onEmailChange = (event) => {
@@ -53,17 +77,83 @@ class Register extends React.Component {
         <main className="pa4 black-80">
           <form className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 ph0 mh0">Register</legend>
+              <legend className="f1 fw6 ph0 mh0 center">Register</legend>
               <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="Name">
+                <label className="db fw6 lh-copy f6" htmlFor="name">
+                  Full Name
+                </label>
+                <input
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                  placeholder="Enter Name"
+                  type="text"
+                  name="Name"
+                  id="Name"
+                  onChange={this.onNameChange}
+                />
+              </div>
+              <div className="mt3">
+                <label className="db fw6 lh-copy f6" htmlFor="Roll">
                   Roll Number
                 </label>
                 <input
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                  placeholder="Enter Roll Number"
                   type="text"
                   name="Roll"
                   id="Roll"
                   onChange={this.onRollChange}
+                />
+              </div>
+              <div className="mt3">
+                <label className="db fw6 lh-copy f6" htmlFor="Branch">
+                  Branch
+                </label>
+                <select
+                  id="Branch"
+                  name="Branch"
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                  onChange={this.onBranchChange}
+                >
+                  <option value="" disabled selected>
+                    Select your Branch
+                  </option>
+                  <option value="CMPN">CMPN</option>
+                  <option value="INFT">INFT</option>
+                  <option value="EXTC">EXTC</option>
+                  <option value="ETRX">ETRX</option>
+                  <option value="BIOM">BIOM</option>
+                </select>
+              </div>
+              <div className="mt3">
+                <label className="db fw6 lh-copy f6" htmlFor="div">
+                  Division
+                </label>
+                <select
+                  id="Div"
+                  name="Div"
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                  placeholder="Select Division"
+                  onChange={this.onDivChange}
+                >
+                  <option value="" disabled selected>
+                    Select your Division
+                  </option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                </select>
+              </div>
+              <div className="mt3">
+                <label className="db fw6 lh-copy f6" htmlFor="phone">
+                  Phone Number
+                </label>
+                <input
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                  placeholder="Enter Phone Number"
+                  type="text"
+                  name="Phone"
+                  id="Phone"
+                  onChange={this.onPhoneChange}
                 />
               </div>
               <div className="mt3">
@@ -72,6 +162,7 @@ class Register extends React.Component {
                 </label>
                 <input
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                  placeholder="Enter Email"
                   type="email"
                   name="email-address"
                   id="email-address"
@@ -83,7 +174,8 @@ class Register extends React.Component {
                   Password
                 </label>
                 <input
-                  className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                  placeholder="Enter Password"
                   type="password"
                   name="password"
                   id="password"

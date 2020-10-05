@@ -50,13 +50,14 @@ class Signin2 extends React.Component {
         <main className="pa4 black-80">
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 ph0 mh0">Sign In</legend>
+              <legend className="f1 fw6 ph0 mh0 center">Sign In</legend>
               <div className="mt3">
                 <label className="db fw6 lh-copy f6" htmlFor="email-address">
                   Email
                 </label>
                 <input
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                  placeholder="Enter Email"
                   type="email"
                   name="email-address"
                   id="email-address"
@@ -69,6 +70,7 @@ class Signin2 extends React.Component {
                 </label>
                 <input
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                  placeholder="Enter Password"
                   type="password"
                   name="password"
                   id="password"
@@ -90,6 +92,12 @@ class Signin2 extends React.Component {
                 className="f6 link dim black db pointer"
               >
                 Register
+              </p>
+              <p
+                //onClick={() => onRouteChange("register")}
+                className="f6 link dim black db pointer"
+              >
+                Forgot your Password?
               </p>
             </div>
           </div>

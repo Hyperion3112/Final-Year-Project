@@ -1,6 +1,5 @@
 import React from "react";
 import "./signin.css";
-//dvcsdvc
 
 class Signin extends React.Component {
   constructor(props) {
@@ -12,12 +11,6 @@ class Signin extends React.Component {
       Name1: "",
       Name2: "",
       Name3: "",
-      phone1: "",
-      phone2: "",
-      phone3: "",
-      email1: "",
-      email2: "",
-      email3: "",
       password1: "",
       password2: "",
       password3: "",
@@ -129,262 +122,177 @@ class Signin extends React.Component {
   render() {
     return (
       <body>
-        <article className="">
-          <main className="">
+        <legend className="f1 ph0 mh0 center">Group Formation Form</legend>
+        <p>Enter the details of all the group members</p>
+        <article className="br2 ba center mw6 ba b--black-10 w-100 w-50-m w-25-l mv4">
+          <main className="pa4 black-80">
             <form>
-              <fieldset className="">
-                <legend className="f1">Group Formation Form</legend>
-                <div className="shadow-5 mt5 pb4 ">
-                  <div className="inaline w-33 left center block ">
-                    <label className="fw6 f3" htmlFor="Roll">
-                      Roll No. of student 1
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="text"
-                      name="Roll1"
-                      onChange={this.onRoll1Change}
-                    />
-                  </div>
-                  <div className="inaline w-33 left center block ">
-                    <label className=" fw6  f3" htmlFor="Roll">
-                      Roll No. of student 2
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="text"
-                      name="Roll2"
-                      onChange={this.onRoll2Change}
-                    />
-                  </div>
-                  <div className="inaline w-33 left center block">
-                    <label className="  fw6  f3" htmlFor="Roll">
-                      Roll No. of student 3
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="text"
-                      name="Roll3"
-                      onChange={this.onRoll3Change}
-                    />
+              <fieldset className="ba b--transparent ph0 mh0">
+                <div className="fw7 lh-copy f4 inaline">
+                  Enter the details of Student 1
+                </div>
+                <div className="cf mb3">
+                  <div className="fl">
+                    <div
+                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
+                      htmlFor="name"
+                    >
+                      Full Name:
+                    </div>
+                    <div class="fl w-75">
+                      <input
+                        type="text"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                        name="name"
+                      />
+                    </div>
                   </div>
                 </div>
-
-                <div className="shadow-5 mt5 pb4">
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="Name">
-                      Name
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="text"
-                      name="Name1"
-                      onChange={this.onName1Change}
-                    />
-                  </div>
-
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="Name">
-                      Name
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="text"
-                      name="Name2"
-                      onChange={this.onName2Change}
-                    />
-                  </div>
-
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="Name">
-                      Name
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="text"
-                      name="Name3"
-                      onChange={this.onName3Change}
-                    />
+                <div className="cf mb3">
+                  <div className="fl">
+                    <div
+                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
+                      htmlFor="roll"
+                    >
+                      Roll Number:
+                    </div>
+                    <div class="fl w-75">
+                      <input
+                        type="text"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        name="roll"
+                      />
+                    </div>
                   </div>
                 </div>
-
-                <div className="shadow-5 mt5 pb4">
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="phone">
-                      Phone No.
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="text"
-                      name="phone1"
-                      onChange={this.onPhone1Change}
-                    />
-                  </div>
-
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="phone">
-                      Phone No.
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="text"
-                      name="phone2"
-                      onChange={this.onPhone2Change}
-                    />
-                  </div>
-
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="phone">
-                      Phone No.
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="text"
-                      name="phone3"
-                      onChange={this.onPhone3Change}
-                    />
+                <div className="cf mb3">
+                  <div className="fl">
+                    <div
+                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
+                      htmlFor="code"
+                    >
+                      Permission Code:
+                    </div>
+                    <div class="fl w-75">
+                      <input
+                        type="text"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        name="code"
+                      />
+                    </div>
                   </div>
                 </div>
-
-                <div className="shadow-5 mt5 pb4">
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="email-address">
-                      Email
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="email"
-                      name="email1"
-                      id="email1"
-                      onChange={this.onEmail1Change}
-                    />
-                  </div>
-
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="email-address">
-                      Email
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="email"
-                      name="email2"
-                      id="email2"
-                      onChange={this.onEmail2Change}
-                    />
-                  </div>
-
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="email-address">
-                      Email
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="email"
-                      name="email3"
-                      id="email3"
-                      onChange={this.onEmail3Change}
-                    />
+                <div className="fw7 lh-copy f4 inaline">
+                  Enter the details of Student 2
+                </div>
+                <div className="cf mb3">
+                  <div className="fl">
+                    <div
+                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
+                      htmlFor="name"
+                    >
+                      Full Name:
+                    </div>
+                    <div class="fl w-75">
+                      <input
+                        type="text"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        name="name"
+                      />
+                    </div>
                   </div>
                 </div>
-
-                <div className="shadow-5 mt5 pb4">
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="email-address">
-                      Password
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="password"
-                      name="password1"
-                      id="password1"
-                      onChange={this.onPassword1Change}
-                    />
-                  </div>
-
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="email-address">
-                      Password
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="password"
-                      name="password2"
-                      id="password2"
-                      onChange={this.onPassword2Change}
-                    />
-                  </div>
-
-                  <div className="inaline w-33 left center block">
-                    <label className="fw6  f3" htmlFor="email-address">
-                      Password
-                    </label>
-                    <input
-                      className="input-reset w-100 bg-transparent hover-bg-black hover-white"
-                      type="password"
-                      name="password3"
-                      id="password3"
-                      onChange={this.onPassword3Change}
-                    />
+                <div className="cf mb3">
+                  <div className="fl">
+                    <div
+                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
+                      htmlFor="roll"
+                    >
+                      Roll Number:
+                    </div>
+                    <div class="fl w-75">
+                      <input
+                        type="text"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        name="roll"
+                      />
+                    </div>
                   </div>
                 </div>
-
-                <div className="pt5">
-                  <label className="db pl30 fw6 lh-copy f3">
-                    Domain and preference{" "}
-                  </label>
-                  <input
-                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-40"
-                    type="text"
-                    name="domain1"
-                    onChange={this.onDomain1Change}
-                  />
-                  <select className="pa2">
-                    <option value="grapefruit">Grapefruit</option>
-                    <option value="lime">Lime</option>
-                    <option value="coconut">Coconut</option>
-                    <option value="mango">Mango</option>
-                  </select>
+                <div className="cf mb3">
+                  <div className="fl">
+                    <div
+                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
+                      htmlFor="code"
+                    >
+                      Permission Code:
+                    </div>
+                    <div class="fl w-75">
+                      <input
+                        type="text"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        name="code"
+                      />
+                    </div>
+                  </div>
                 </div>
-
-                <div className="pt5">
-                  <label className="db pl30 fw6 lh-copy f3">
-                    Domain and preference{" "}
-                  </label>
-                  <input
-                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-40"
-                    type="text"
-                    name="domain2"
-                    onChange={this.onDomain2Change}
-                  />
-                  <select className="pa2">
-                    <option value="grapefruit">Grapefruit</option>
-                    <option value="lime">Lime</option>
-                    <option value="coconut">Coconut</option>
-                    <option value="mango">Mango</option>
-                  </select>
+                <div className="fw7 lh-copy f4 inaline">
+                  Enter the details of Student 3
                 </div>
-
-                <div className="pt5">
-                  <label className="db pl30 fw6 lh-copy f3">
-                    Domain and preference{" "}
-                  </label>
-                  <input
-                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-40"
-                    type="text"
-                    name="domain3"
-                    onChange={this.onDomain3Change}
-                  />
-                  <select className="pa2">
-                    <option value="grapefruit">Grapefruit</option>
-                    <option value="lime">Lime</option>
-                    <option value="coconut">Coconut</option>
-                    <option value="mango">Mango</option>
-                  </select>
+                <div className="cf mb3">
+                  <div className="fl">
+                    <div
+                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
+                      htmlFor="name"
+                    >
+                      Full Name:
+                    </div>
+                    <div class="fl w-75">
+                      <input
+                        type="text"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        name="name"
+                      />
+                    </div>
+                  </div>
                 </div>
-
+                <div className="cf mb3">
+                  <div className="fl">
+                    <div
+                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
+                      htmlFor="roll"
+                    >
+                      Roll Number:
+                    </div>
+                    <div class="fl w-75">
+                      <input
+                        type="text"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        name="roll"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="cf mb3">
+                  <div className="fl">
+                    <div
+                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
+                      htmlFor="code"
+                    >
+                      Permission Code:
+                    </div>
+                    <div class="fl w-75">
+                      <input
+                        type="text"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        name="code"
+                      />
+                    </div>
+                  </div>
+                </div>
                 <div className="ma5">
                   <input
-                    className="br3 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f3 dib"
+                    className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                     type="submit"
                     value="Submit"
                     onClick={this.onSubmit}
