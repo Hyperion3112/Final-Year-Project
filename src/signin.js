@@ -91,11 +91,11 @@ class Signin extends React.Component {
                     >
                       Full Name:
                     </div>
-                    <div class="fl w-75">
+                    <div className="fl w-75">
                       <input
                         placeholder="Enter Name"
                         type="text"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="Name1"
                         id="Name1"
                         onChange={this.onName1Change}
@@ -111,11 +111,11 @@ class Signin extends React.Component {
                     >
                       Roll Number:
                     </div>
-                    <div class="fl w-75">
+                    <div className="fl w-75">
                       <input
                         type="text"
                         placeholder="Enter Roll Number"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="Roll1"
                         id="Roll1"
                         onChange={this.onRoll1Change}
@@ -131,11 +131,11 @@ class Signin extends React.Component {
                     >
                       Permission Code:
                     </div>
-                    <div class="fl w-75">
+                    <div className="fl w-75">
                       <input
                         type="text"
                         placeholder="Enter Code"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="Code1"
                         id="Code1"
                       />
@@ -153,14 +153,14 @@ class Signin extends React.Component {
                     >
                       Full Name:
                     </div>
-                    <div class="fl w-75">
+                    <div className="fl w-75">
                       <input
                         type="text"
                         placeholder="Enter Name"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="Name2"
                         id="Name2"
-                        nChange={this.onName2Change}
+                        onChange={this.onName2Change}
                       />
                     </div>
                   </div>
@@ -173,11 +173,11 @@ class Signin extends React.Component {
                     >
                       Roll Number:
                     </div>
-                    <div class="fl w-75">
+                    <div className="fl w-75">
                       <input
                         type="text"
                         placeholder="Enter Roll Number"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="Roll2"
                         id="Roll2"
                         onChange={this.onRoll2Change}
@@ -193,11 +193,11 @@ class Signin extends React.Component {
                     >
                       Permission Code:
                     </div>
-                    <div class="fl w-75">
+                    <div className="fl w-75">
                       <input
                         type="text"
                         placeholder="Enter Code"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="Code2"
                         id="Code2"
                       />
@@ -215,14 +215,14 @@ class Signin extends React.Component {
                     >
                       Full Name:
                     </div>
-                    <div class="fl w-75">
+                    <div className="fl w-75">
                       <input
                         type="text"
                         placeholder="Enter Name"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="Name3"
                         id="Name3"
-                        nChange={this.onName3Change}
+                        onChange={this.onName3Change}
                       />
                     </div>
                   </div>
@@ -235,11 +235,11 @@ class Signin extends React.Component {
                     >
                       Roll Number:
                     </div>
-                    <div class="fl w-75">
+                    <div className="fl w-75">
                       <input
                         type="text"
                         placeholder="Enter Roll Number"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="Roll3"
                         id="Roll3"
                         onChange={this.onRoll3Change}
@@ -255,11 +255,11 @@ class Signin extends React.Component {
                     >
                       Permission Code:
                     </div>
-                    <div class="fl w-75">
+                    <div className="fl w-75">
                       <input
                         type="text"
                         placeholder="Enter Code"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="Code3"
                         id="Code3"
                       />
