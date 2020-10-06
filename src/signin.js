@@ -124,15 +124,15 @@ class Signin extends React.Component {
       <body>
         <legend className="f1 ph0 mh0 center">Group Formation Form</legend>
         <p>Enter the details of all the group members</p>
-        <article className="br2 ba center mw6 ba b--black-10 w-100 w-50-m w-25-l mv4">
+        <article className="br3 ba center mw6 b--black-10 w-100 mv4 shadow-5">
           <main className="pa4 black-80">
             <form>
               <fieldset className="ba b--transparent ph0 mh0">
                 <div className="fw7 lh-copy f4 inaline">
                   Enter the details of Student 1
                 </div>
-                <div className="cf mb3">
-                  <div className="fl">
+                <div className="mb3">
+                  <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
                       htmlFor="name"
@@ -141,6 +141,7 @@ class Signin extends React.Component {
                     </div>
                     <div class="fl w-75">
                       <input
+                        placeholder="Enter Name"
                         type="text"
                         class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="name"
@@ -148,8 +149,8 @@ class Signin extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="cf mb3">
-                  <div className="fl">
+                <div className="mb3">
+                  <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
                       htmlFor="roll"
@@ -159,14 +160,15 @@ class Signin extends React.Component {
                     <div class="fl w-75">
                       <input
                         type="text"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        placeholder="Enter Roll Number"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="roll"
                       />
                     </div>
                   </div>
                 </div>
-                <div className="cf mb3">
-                  <div className="fl">
+                <div className="mb3">
+                  <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
                       htmlFor="code"
@@ -176,7 +178,8 @@ class Signin extends React.Component {
                     <div class="fl w-75">
                       <input
                         type="text"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        placeholder="Enter Code"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="code"
                       />
                     </div>
@@ -185,8 +188,8 @@ class Signin extends React.Component {
                 <div className="fw7 lh-copy f4 inaline">
                   Enter the details of Student 2
                 </div>
-                <div className="cf mb3">
-                  <div className="fl">
+                <div className="mb3">
+                  <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
                       htmlFor="name"
@@ -196,14 +199,15 @@ class Signin extends React.Component {
                     <div class="fl w-75">
                       <input
                         type="text"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        placeholder="Enter Name"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="name"
                       />
                     </div>
                   </div>
                 </div>
-                <div className="cf mb3">
-                  <div className="fl">
+                <div className="mb3">
+                  <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
                       htmlFor="roll"
@@ -213,14 +217,15 @@ class Signin extends React.Component {
                     <div class="fl w-75">
                       <input
                         type="text"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        placeholder="Enter Roll Number"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="roll"
                       />
                     </div>
                   </div>
                 </div>
-                <div className="cf mb3">
-                  <div className="fl">
+                <div className="mb3">
+                  <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
                       htmlFor="code"
@@ -230,7 +235,8 @@ class Signin extends React.Component {
                     <div class="fl w-75">
                       <input
                         type="text"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        placeholder="Enter Code"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="code"
                       />
                     </div>
@@ -239,8 +245,8 @@ class Signin extends React.Component {
                 <div className="fw7 lh-copy f4 inaline">
                   Enter the details of Student 3
                 </div>
-                <div className="cf mb3">
-                  <div className="fl">
+                <div className="mb3">
+                  <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
                       htmlFor="name"
@@ -250,14 +256,15 @@ class Signin extends React.Component {
                     <div class="fl w-75">
                       <input
                         type="text"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        placeholder="Enter Name"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="name"
                       />
                     </div>
                   </div>
                 </div>
-                <div className="cf mb3">
-                  <div className="fl">
+                <div className="mb3">
+                  <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
                       htmlFor="roll"
@@ -267,14 +274,15 @@ class Signin extends React.Component {
                     <div class="fl w-75">
                       <input
                         type="text"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        placeholder="Enter Roll Number"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="roll"
                       />
                     </div>
                   </div>
                 </div>
-                <div className="cf mb3">
-                  <div className="fl">
+                <div className="mb3">
+                  <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
                       htmlFor="code"
@@ -284,7 +292,8 @@ class Signin extends React.Component {
                     <div class="fl w-75">
                       <input
                         type="text"
-                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
+                        placeholder="Enter Code"
+                        class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                         name="code"
                       />
                     </div>
