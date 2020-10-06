@@ -87,7 +87,7 @@ class Signin extends React.Component {
                   <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="name"
+                      htmlFor="name1"
                     >
                       Full Name:
                     </div>
@@ -107,7 +107,7 @@ class Signin extends React.Component {
                   <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="roll"
+                      htmlFor="roll1"
                     >
                       Roll Number:
                     </div>
@@ -127,7 +127,7 @@ class Signin extends React.Component {
                   <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="code"
+                      htmlFor="code1"
                     >
                       Permission Code:
                     </div>
@@ -149,7 +149,7 @@ class Signin extends React.Component {
                   <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="name"
+                      htmlFor="name2"
                     >
                       Full Name:
                     </div>
@@ -169,7 +169,7 @@ class Signin extends React.Component {
                   <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="roll"
+                      htmlFor="roll2"
                     >
                       Roll Number:
                     </div>
@@ -189,7 +189,7 @@ class Signin extends React.Component {
                   <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="code"
+                      htmlFor="code2"
                     >
                       Permission Code:
                     </div>
@@ -211,7 +211,7 @@ class Signin extends React.Component {
                   <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="name"
+                      htmlFor="name3"
                     >
                       Full Name:
                     </div>
@@ -231,7 +231,7 @@ class Signin extends React.Component {
                   <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="roll"
+                      htmlFor="roll3"
                     >
                       Roll Number:
                     </div>
@@ -251,7 +251,7 @@ class Signin extends React.Component {
                   <div className="fl w-100">
                     <div
                       className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="code"
+                      htmlFor="code3"
                     >
                       Permission Code:
                     </div>
@@ -266,9 +266,9 @@ class Signin extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="ma5">
+                <div className="ma3">
                   <input
-                    className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+                    className="br3 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                     type="submit"
                     value="Submit"
                     onClick={this.onSubmit}
