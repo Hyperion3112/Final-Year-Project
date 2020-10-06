@@ -56,9 +56,13 @@ class Register extends React.Component {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        name: this.state.name,
+        roll: this.state.roll,
+        branch: this.state.branch,
+        div: this.state.div,
+        phone: this.state.phone,
         email: this.state.email,
         password: this.state.password,
-        roll: this.state.roll,
       }),
     })
       .then((response) => response.json())

@@ -2,35 +2,20 @@ import React from "react";
 import "./signin.css";
 
 class Signin extends React.Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
-      Roll1: "",
-      Roll2: "",
-      Roll3: "",
       Name1: "",
       Name2: "",
       Name3: "",
-      password1: "",
-      password2: "",
-      password3: "",
-      domain1: "",
-      domain2: "",
-      domain3: "",
+      Roll1: "",
+      Roll2: "",
+      Roll3: "",
+      Code1: "",
+      Code2: "",
+      Code3: "",
     };
   }
-
-  onRoll1Change = (event) => {
-    this.setState({ Roll1: event.target.value });
-  };
-
-  onRoll2Change = (event) => {
-    this.setState({ Roll2: event.target.value });
-  };
-
-  onRoll3Change = (event) => {
-    this.setState({ Roll3: event.target.value });
-  };
 
   onName1Change = (event) => {
     this.setState({ Name1: event.target.value });
@@ -43,80 +28,47 @@ class Signin extends React.Component {
   onName3Change = (event) => {
     this.setState({ Name3: event.target.value });
   };
-
-  onPhone1Change = (event) => {
-    this.setState({ phone1: event.target.value });
+  onRoll1Change = (event) => {
+    this.setState({ Roll1: event.target.value });
   };
 
-  onPhone2Change = (event) => {
-    this.setState({ phone2: event.target.value });
+  onRoll2Change = (event) => {
+    this.setState({ Roll2: event.target.value });
   };
 
-  onPhone3Change = (event) => {
-    this.setState({ phone3: event.target.value });
+  onRoll3Change = (event) => {
+    this.setState({ Roll3: event.target.value });
   };
 
-  onEmail1Change = (event) => {
-    this.setState({ email1: event.target.value });
+  onCode1Change = (event) => {
+    this.setState({ Code1: event.target.value });
   };
 
-  onEmail2Change = (event) => {
-    this.setState({ email2: event.target.value });
+  onCode2Change = (event) => {
+    this.setState({ Code2: event.target.value });
   };
 
-  onEmail3Change = (event) => {
-    this.setState({ email3: event.target.value });
-  };
-
-  onPassword1Change = (event) => {
-    this.setState({ phone1: event.target.value });
-  };
-
-  onPassword2Change = (event) => {
-    this.setState({ phone2: event.target.value });
-  };
-
-  onPassword3Change = (event) => {
-    this.setState({ phone3: event.target.value });
-  };
-
-  onDomain1Change = (event) => {
-    this.setState({ domain1: event.target.value });
-  };
-
-  onDomain2Change = (event) => {
-    this.setState({ domain2: event.target.value });
-  };
-
-  onDomain3Change = (event) => {
-    this.setState({ domain3: event.target.value });
+  onCode3Change = (event) => {
+    this.setState({ Code3: event.target.value });
   };
 
   onSubmit = () => {
-    fetch("http://localhost:3000/", {
+    console.log(this.state);
+    fetch("http://localhost:3000/GroupForm", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        roll1: this.state.Roll1,
-        roll2: this.state.Roll2,
-        roll3: this.state.Roll3,
         name1: this.state.Name1,
         name2: this.state.Name2,
         name3: this.state.Name3,
-        phone1: this.state.phone1,
-        phone2: this.state.phone2,
-        phone3: this.state.phone3,
-        email1: this.state.email1,
-        email2: this.state.email2,
-        email3: this.state.email3,
-        password1: this.state.password1,
-        password2: this.state.password2,
-        password3: this.state.password3,
-        domain1: this.state.domain1,
-        domain2: this.state.domain2,
-        domain3: this.state.domain3,
+        roll1: this.state.Roll1,
+        roll2: this.state.Roll2,
+        roll3: this.state.Roll3,
+        code1: this.state.Code1,
+        code2: this.state.Code2,
+        code3: this.state.Code3,
       }),
-    });
+    }).then((response) => response.json());
   };
 
   render() {
@@ -144,7 +96,9 @@ class Signin extends React.Component {
                         placeholder="Enter Name"
                         type="text"
                         class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="name"
+                        name="Name1"
+                        id="Name1"
+                        onChange={this.onName1Change}
                       />
                     </div>
                   </div>
@@ -162,7 +116,9 @@ class Signin extends React.Component {
                         type="text"
                         placeholder="Enter Roll Number"
                         class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="roll"
+                        name="Roll1"
+                        id="Roll1"
+                        onChange={this.onRoll1Change}
                       />
                     </div>
                   </div>
@@ -180,7 +136,8 @@ class Signin extends React.Component {
                         type="text"
                         placeholder="Enter Code"
                         class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="code"
+                        name="Code1"
+                        id="Code1"
                       />
                     </div>
                   </div>
@@ -201,7 +158,9 @@ class Signin extends React.Component {
                         type="text"
                         placeholder="Enter Name"
                         class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="name"
+                        name="Name2"
+                        id="Name2"
+                        nChange={this.onName2Change}
                       />
                     </div>
                   </div>
@@ -219,7 +178,9 @@ class Signin extends React.Component {
                         type="text"
                         placeholder="Enter Roll Number"
                         class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="roll"
+                        name="Roll2"
+                        id="Roll2"
+                        onChange={this.onRoll2Change}
                       />
                     </div>
                   </div>
@@ -237,7 +198,8 @@ class Signin extends React.Component {
                         type="text"
                         placeholder="Enter Code"
                         class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="code"
+                        name="Code2"
+                        id="Code2"
                       />
                     </div>
                   </div>
@@ -258,7 +220,9 @@ class Signin extends React.Component {
                         type="text"
                         placeholder="Enter Name"
                         class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="name"
+                        name="Name3"
+                        id="Name3"
+                        nChange={this.onName3Change}
                       />
                     </div>
                   </div>
@@ -276,7 +240,9 @@ class Signin extends React.Component {
                         type="text"
                         placeholder="Enter Roll Number"
                         class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="roll"
+                        name="Roll3"
+                        id="Roll3"
+                        onChange={this.onRoll3Change}
                       />
                     </div>
                   </div>
@@ -294,7 +260,8 @@ class Signin extends React.Component {
                         type="text"
                         placeholder="Enter Code"
                         class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="code"
+                        name="Code3"
+                        id="Code3"
                       />
                     </div>
                   </div>

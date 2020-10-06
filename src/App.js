@@ -63,7 +63,6 @@ class App extends Component {
               onInputChange={this.onInputChange}
               onButtonSubmit={this.onButtonSubmit}
             />
-            )
           </div>
         ) : route === "signin" ? (
           <Signin2
