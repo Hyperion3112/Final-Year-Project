@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
   res.send(database.users);
 });
 
-app.post("/signin", (req, res) => {
+app.post("/groupform", (req, res) => {
   if (
     req.body.roll1 === database.users[0].roll1 &&
     req.body.name1 === database.users[0].name1 &&
@@ -38,7 +38,7 @@ app.post("/signin", (req, res) => {
   }
 });
 
-app.post("/signin2", (req, res) => {
+app.post("/signin", (req, res) => {
   db.select("email", "hash")
     .from("login")
     .where("email", "=", req.body.email)

@@ -1,4 +1,27 @@
 import React from "react";
+import {
+  Button,
+  Select,
+  Form,
+  Grid,
+  Header,
+  Message,
+  Segment,
+} from "semantic-ui-react";
+
+const optionsbranch = [
+  { key: "1", text: "CMPN", value: "cmpn" },
+  { key: "2", text: "INFT", value: "inft" },
+  { key: "3", text: "EXTC", value: "extc" },
+  { key: "4", text: "ETRX", value: "etrx" },
+  { key: "5", text: "BIOM", value: "biom" },
+];
+
+const optionsdiv = [
+  { key: "A", text: "A", value: "a" },
+  { key: "B", text: "B", value: "b" },
+  { key: "C", text: "C", value: "c" },
+];
 
 class Register extends React.Component {
   constructor() {
@@ -77,127 +100,100 @@ class Register extends React.Component {
   render() {
     const { onRouteChange } = this.props;
     return (
-      <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
-        <main className="pa4 black-80">
-          <form className="measure">
-            <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 ph0 mh0 center">Register</legend>
-              <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="name">
-                  Full Name
-                </label>
+      <Grid
+        textAlign="center"
+        style={{ height: "100vh" }}
+        verticalAlign="middle"
+      >
+        <Grid.Column style={{ maxWidth: 450 }}>
+          <Header as="h2" color="black" textAlign="center">
+            Register
+          </Header>
+          <Form size="large">
+            <Segment stacked>
+              <Form.Field>
+                <label>Full Name</label>
                 <input
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
-                  placeholder="Enter Name"
+                  placeholder="Full Name"
                   type="text"
                   name="Name"
                   id="Name"
                   onChange={this.onNameChange}
                 />
-              </div>
-              <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="Roll">
-                  Roll Number
-                </label>
+              </Form.Field>
+              <Form.Field>
+                <label>Roll Number</label>
                 <input
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
-                  placeholder="Enter Roll Number"
+                  placeholder="Roll Number"
                   type="text"
                   name="Roll"
                   id="Roll"
                   onChange={this.onRollChange}
                 />
-              </div>
-              <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="Branch">
-                  Branch
-                </label>
-                <select
-                  id="Branch"
-                  name="Branch"
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
-                  onChange={this.onBranchChange}
-                >
-                  <option value="" disabled selected>
-                    Select your Branch
-                  </option>
-                  <option value="CMPN">CMPN</option>
-                  <option value="INFT">INFT</option>
-                  <option value="EXTC">EXTC</option>
-                  <option value="ETRX">ETRX</option>
-                  <option value="BIOM">BIOM</option>
-                </select>
-              </div>
-              <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="div">
-                  Division
-                </label>
-                <select
-                  id="Div"
-                  name="Div"
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
-                  placeholder="Select Division"
-                  onChange={this.onDivChange}
-                >
-                  <option value="" disabled selected>
-                    Select your Division
-                  </option>
-                  <option value="A">A</option>
-                  <option value="B">B</option>
-                  <option value="C">C</option>
-                </select>
-              </div>
-              <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="phone">
-                  Phone Number
-                </label>
+              </Form.Field>
+              <Form.Field>
+                <label>Phone Number</label>
                 <input
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
-                  placeholder="Enter Phone Number"
-                  type="text"
-                  name="Phone"
-                  id="Phone"
+                  placeholder="Phone Number"
+                  type="tel"
+                  name="phone"
+                  id="phone"
                   onChange={this.onPhoneChange}
                 />
-              </div>
-              <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="email-address">
-                  Email
-                </label>
+              </Form.Field>
+              <Form.Field
+                control={Select}
+                label="Branch"
+                options={optionsbranch}
+                placeholder="Branch"
+                name="branch"
+                id="branch"
+                onChange={this.onBranchChange}
+              />
+              <Form.Field
+                control={Select}
+                label="Division"
+                options={optionsdiv}
+                placeholder="Division"
+                name="div"
+                id="div"
+                onChange={this.onDivChange}
+              />
+              <Form.Field>
+                <label>Email Address</label>
                 <input
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
-                  placeholder="Enter Email"
+                  placeholder="Email"
                   type="email"
                   name="email-address"
                   id="email-address"
                   onChange={this.onEmailChange}
                 />
-              </div>
-              <div className="mv3">
-                <label className="db fw6 lh-copy f6" htmlFor="password">
-                  Password
-                </label>
+              </Form.Field>
+              <Form.Field>
+                <label>Password</label>
                 <input
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-75"
-                  placeholder="Enter Password"
+                  placeholder="Password"
                   type="password"
-                  name="password"
+                  name="Password"
                   id="password"
                   onChange={this.onPasswordChange}
                 />
-              </div>
-            </fieldset>
-            <div className="">
-              <input
-                onClick={(() => onRouteChange("home"), this.onSubmit)}
-                className="br3 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+              </Form.Field>
+
+              <Button
+                color="blue"
+                fluid
+                size="large"
                 type="submit"
                 value="Register"
-              />
-            </div>
-          </form>
-        </main>
-      </article>
+                onClick={(() => onRouteChange("home"), this.onSubmit)}
+              >
+                Register
+              </Button>
+            </Segment>
+          </Form>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

@@ -1,284 +1,126 @@
 import React from "react";
-import "./signin.css";
+import logo from "./logo.png";
+import {
+  Button,
+  Form,
+  Grid,
+  Header,
+  Image,
+  Message,
+  Segment,
+  Checkbox,
+} from "semantic-ui-react";
 
 class Signin extends React.Component {
   constructor() {
     super();
     this.state = {
-      Name1: "",
-      Name2: "",
-      Name3: "",
-      Roll1: "",
-      Roll2: "",
-      Roll3: "",
-      Code1: "",
-      Code2: "",
-      Code3: "",
+      signInEmail: "",
+      signInPassword: "",
     };
   }
 
-  onName1Change = (event) => {
-    this.setState({ Name1: event.target.value });
+  onEmailChange = (event) => {
+    this.setState({
+      signInEmail: event.target.value,
+    });
   };
 
-  onName2Change = (event) => {
-    this.setState({ Name2: event.target.value });
-  };
-
-  onName3Change = (event) => {
-    this.setState({ Name3: event.target.value });
-  };
-  onRoll1Change = (event) => {
-    this.setState({ Roll1: event.target.value });
-  };
-
-  onRoll2Change = (event) => {
-    this.setState({ Roll2: event.target.value });
-  };
-
-  onRoll3Change = (event) => {
-    this.setState({ Roll3: event.target.value });
-  };
-
-  onCode1Change = (event) => {
-    this.setState({ Code1: event.target.value });
-  };
-
-  onCode2Change = (event) => {
-    this.setState({ Code2: event.target.value });
-  };
-
-  onCode3Change = (event) => {
-    this.setState({ Code3: event.target.value });
+  onPasswordChange = (event) => {
+    this.setState({
+      signInPassword: event.target.value,
+    });
   };
 
   onSubmit = () => {
     console.log(this.state);
-    fetch("http://localhost:3000/GroupForm", {
+    this.props.onRouteChange("home");
+    fetch("http://localhost:3000/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name1: this.state.Name1,
-        name2: this.state.Name2,
-        name3: this.state.Name3,
-        roll1: this.state.Roll1,
-        roll2: this.state.Roll2,
-        roll3: this.state.Roll3,
-        code1: this.state.Code1,
-        code2: this.state.Code2,
-        code3: this.state.Code3,
+        email: this.state.signInEmail,
+        password: this.state.signInPassword,
       }),
-    }).then((response) => response.json());
+    })
+      .then((response) => response.json())
+      .then((user) => {
+        if (user.id) {
+          this.props.onRouteChange("home");
+        } else {
+          this.props.onRouteChange("signin");
+        }
+      });
   };
 
   render() {
+    const { onRouteChange } = this.props;
     return (
-      <body>
-        <legend className="f1 ph0 mh0 center">Group Formation Form</legend>
-        <p>Enter the details of all the group members</p>
-        <article className="br3 ba center mw6 b--black-10 w-100 mv4 shadow-5">
-          <main className="pa4 black-80">
-            <form>
-              <fieldset className="ba b--transparent ph0 mh0">
-                <div className="fw7 lh-copy f4 inaline">
-                  Enter the details of Student 1
-                </div>
-                <div className="mb3">
-                  <div className="fl w-100">
-                    <div
-                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="name1"
-                    >
-                      Full Name:
-                    </div>
-                    <div className="fl w-75">
-                      <input
-                        placeholder="Enter Name"
-                        type="text"
-                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="Name1"
-                        id="Name1"
-                        onChange={this.onName1Change}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="mb3">
-                  <div className="fl w-100">
-                    <div
-                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="roll1"
-                    >
-                      Roll Number:
-                    </div>
-                    <div className="fl w-75">
-                      <input
-                        type="text"
-                        placeholder="Enter Roll Number"
-                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="Roll1"
-                        id="Roll1"
-                        onChange={this.onRoll1Change}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="mb3">
-                  <div className="fl w-100">
-                    <div
-                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="code1"
-                    >
-                      Permission Code:
-                    </div>
-                    <div className="fl w-75">
-                      <input
-                        type="text"
-                        placeholder="Enter Code"
-                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="Code1"
-                        id="Code1"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="fw7 lh-copy f4 inaline">
-                  Enter the details of Student 2
-                </div>
-                <div className="mb3">
-                  <div className="fl w-100">
-                    <div
-                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="name2"
-                    >
-                      Full Name:
-                    </div>
-                    <div className="fl w-75">
-                      <input
-                        type="text"
-                        placeholder="Enter Name"
-                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="Name2"
-                        id="Name2"
-                        onChange={this.onName2Change}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="mb3">
-                  <div className="fl w-100">
-                    <div
-                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="roll2"
-                    >
-                      Roll Number:
-                    </div>
-                    <div className="fl w-75">
-                      <input
-                        type="text"
-                        placeholder="Enter Roll Number"
-                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="Roll2"
-                        id="Roll2"
-                        onChange={this.onRoll2Change}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="mb3">
-                  <div className="fl w-100">
-                    <div
-                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="code2"
-                    >
-                      Permission Code:
-                    </div>
-                    <div className="fl w-75">
-                      <input
-                        type="text"
-                        placeholder="Enter Code"
-                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="Code2"
-                        id="Code2"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="fw7 lh-copy f4 inaline">
-                  Enter the details of Student 3
-                </div>
-                <div className="mb3">
-                  <div className="fl w-100">
-                    <div
-                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="name3"
-                    >
-                      Full Name:
-                    </div>
-                    <div className="fl w-75">
-                      <input
-                        type="text"
-                        placeholder="Enter Name"
-                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="Name3"
-                        id="Name3"
-                        onChange={this.onName3Change}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="mb3">
-                  <div className="fl w-100">
-                    <div
-                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="roll3"
-                    >
-                      Roll Number:
-                    </div>
-                    <div className="fl w-75">
-                      <input
-                        type="text"
-                        placeholder="Enter Roll Number"
-                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="Roll3"
-                        id="Roll3"
-                        onChange={this.onRoll3Change}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="mb3">
-                  <div className="fl w-100">
-                    <div
-                      className="fl fw6 lh-copy mb3 f6 w-25 inaline"
-                      htmlFor="code3"
-                    >
-                      Permission Code:
-                    </div>
-                    <div className="fl w-75">
-                      <input
-                        type="text"
-                        placeholder="Enter Code"
-                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                        name="Code3"
-                        id="Code3"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="ma3">
-                  <input
-                    className="br3 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                    type="submit"
-                    value="Submit"
-                    onClick={this.onSubmit}
-                  />
-                </div>
-              </fieldset>
-            </form>
-          </main>
-        </article>
-      </body>
+      <div className="zindex:1">
+        <Grid
+          textAlign="center"
+          style={{ height: "75vh" }}
+          verticalAlign="middle"
+          zindex="1"
+        >
+          <Grid.Column style={{ maxWidth: 450 }}>
+            <Header as="h2" color="white" textAlign="center">
+              Log-in to your account
+            </Header>
+            <Form size="large">
+              <Segment stacked>
+                <Form.Input
+                  fluid
+                  icon="user"
+                  iconPosition="left"
+                  type="email"
+                  name="email-address"
+                  id="email-address"
+                  onChange={this.onEmailChange}
+                  placeholder="E-mail address"
+                />
+                <Form.Input
+                  fluid
+                  icon="lock"
+                  iconPosition="left"
+                  placeholder="Password"
+                  type="email"
+                  name="email-address"
+                  id="email-address"
+                  onChange={this.onPasswordChange}
+                  type="password"
+                />
+                <Form.Field control={Checkbox} label="Remember Me" />
+
+                <Button
+                  color="blue"
+                  fluid
+                  size="large"
+                  value="Sign In"
+                  onClick={this.onSubmit}
+                >
+                  Login
+                </Button>
+              </Segment>
+            </Form>
+            <Message>
+              New to us?{" "}
+              <a
+                onClick={() => onRouteChange("register")}
+                className="f6 link dim black db pointer"
+              >
+                Register
+              </a>
+              <a
+                onClick={() => onRouteChange("forgotpassword")}
+                className="f6 link dim black db pointer"
+              >
+                Forgot Password?
+              </a>
+            </Message>
+          </Grid.Column>
+        </Grid>
+      </div>
     );
   }
 }

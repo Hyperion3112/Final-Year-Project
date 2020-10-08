@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import "semantic-ui-css/semantic.min.css";
+import Logo from "./logo";
 import Signin from "./signin";
-import Signin2 from "./signin2";
 import Register from "./register";
 import Navigation from "./navigation";
+import MainPage from "./mainpage";
 
 import "./App.css";
 import "tachyons";
@@ -30,7 +32,6 @@ class App extends Component {
         id: data.id,
         name: data.name,
         email: data.email,
-        entries: data.entries,
         joined: data.joined,
       },
     });
@@ -53,22 +54,18 @@ class App extends Component {
     const { isSignedIn, route } = this.state;
     return (
       <div className="App">
+        <Logo />
         <Navigation
           isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}
         />
+
         {route === "home" ? (
           <div>
-            <Signin
-              onInputChange={this.onInputChange}
-              onButtonSubmit={this.onButtonSubmit}
-            />
+            <MainPage onInputChange={this.onInputChange} />
           </div>
         ) : route === "signin" ? (
-          <Signin2
-            loadUser={this.loadUser}
-            onRouteChange={this.onRouteChange}
-          />
+          <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
         ) : (
           <Register
             loadUser={this.loadUser}
