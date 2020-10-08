@@ -9,7 +9,7 @@ import {
   Checkbox,
 } from "semantic-ui-react";
 
-class Signin extends React.Component {
+class Signinerror extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -73,9 +73,14 @@ class Signin extends React.Component {
                   iconPosition="left"
                   type="email"
                   name="email-address"
-                  id="email-address"
+                  id="erroremail-address"
+                  placeholder="Email address"
                   onChange={this.onEmailChange}
-                  placeholder="E-mail address"
+                  control={Input}
+                  error={{
+                    content: "Please enter a valid email address",
+                    pointing: "below",
+                  }}
                 />
                 <Form.Input
                   fluid
@@ -123,4 +128,4 @@ class Signin extends React.Component {
   }
 }
 
-export default Signin;
+export default Signinerror;

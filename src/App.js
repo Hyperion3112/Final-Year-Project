@@ -54,7 +54,6 @@ class App extends Component {
     const { isSignedIn, route } = this.state;
     return (
       <div className="App">
-        <Logo />
         <Navigation
           isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}
