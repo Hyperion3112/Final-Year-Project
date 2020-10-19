@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "semantic-ui-css/semantic.min.css";
-import Logo from "./logo";
 import Signin from "./signin";
 import Register from "./register";
 import Navigation from "./navigation";
 import MainPage from "./mainpage";
+import ForgotPass from "./forgotpass";
 
 import "./App.css";
 import "tachyons";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -19,9 +20,10 @@ class App extends Component {
       user: {
         id: "",
         name: "",
+        roll: "",
+        phone: "",
         email: "",
-        entries: 0,
-        joined: "",
+        password: "",
       },
     };
   }
@@ -31,8 +33,10 @@ class App extends Component {
       user: {
         id: data.id,
         name: data.name,
+        roll: data.roll,
+        phone: data.phone,
         email: data.email,
-        joined: data.joined,
+        password: data.password,
       },
     });
   };
@@ -58,7 +62,6 @@ class App extends Component {
           isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}
         />
-
         {route === "home" ? (
           <div>
             <MainPage onInputChange={this.onInputChange} />
@@ -71,6 +74,11 @@ class App extends Component {
             onRouteChange={this.onRouteChange}
           />
         )}
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/forgotpass" component={ForgotPass}></Route>
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }

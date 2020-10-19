@@ -52,24 +52,24 @@ const options = [
 ];
 
 const options1 = [
-  { key: "angular", text: "Prof. 1", value: "Prof1" },
-  { key: "css", text: "Prof. 2", value: "Prof2" },
-  { key: "design", text: "Prof. 3", value: "Prof3" },
-  { key: "ember", text: "Prof. 4", value: "Prof4" },
-  { key: "html", text: "Prof. 5", value: "Prof5" },
-  { key: "ia", text: "Prof. 6", value: "Prof6" },
-  { key: "javascript", text: "Prof. 7", value: "Prof7" },
-  { key: "mech", text: "Prof. 8", value: "Prof8" },
-  { key: "meteor", text: "Prof. 9", value: "Prof9" },
-  { key: "node", text: "Prof. 10", value: "Prof10" },
-  { key: "plumbing", text: "Prof. 11", value: "Prof11" },
-  { key: "python", text: "Prof. 12", value: "Prof12" },
-  { key: "rails", text: "Prof. 13", value: "Prof13" },
-  { key: "react", text: "Prof. 14", value: "Prof14" },
-  { key: "repair", text: "Prof. 15", value: "Prof15" },
-  { key: "ruby", text: "Prof. 16", value: "Prof16" },
-  { key: "ui", text: "Prof. 17", value: "Prof17" },
-  { key: "ux", text: "Prof. 18", value: "Prof18" },
+  { key: "1", text: "Prof. 1", value: "Prof1" },
+  { key: "2", text: "Prof. 2", value: "Prof2" },
+  { key: "3", text: "Prof. 3", value: "Prof3" },
+  { key: "4", text: "Prof. 4", value: "Prof4" },
+  { key: "5", text: "Prof. 5", value: "Prof5" },
+  { key: "6", text: "Prof. 6", value: "Prof6" },
+  { key: "7", text: "Prof. 7", value: "Prof7" },
+  { key: "8", text: "Prof. 8", value: "Prof8" },
+  { key: "9", text: "Prof. 9", value: "Prof9" },
+  { key: "10", text: "Prof. 10", value: "Prof10" },
+  { key: "1", text: "Prof. 11", value: "Prof11" },
+  { key: "12", text: "Prof. 12", value: "Prof12" },
+  { key: "13", text: "Prof. 13", value: "Prof13" },
+  { key: "14", text: "Prof. 14", value: "Prof14" },
+  { key: "15", text: "Prof. 15", value: "Prof15" },
+  { key: "16", text: "Prof. 16", value: "Prof16" },
+  { key: "17", text: "Prof. 17", value: "Prof17" },
+  { key: "18", text: "Prof. 18", value: "Prof18" },
 ];
 
 class GroupForm extends React.Component {
@@ -218,6 +218,8 @@ class GroupForm extends React.Component {
             </p>
             <Form.Select
               fluid
+              multiple
+              selection
               label="Domain"
               options={options}
               placeholder="Domain"
@@ -236,7 +238,15 @@ class GroupForm extends React.Component {
               id="Guide"
               onChange={this.onGuideChange}
             />
-            <Form.Button className="pt3">Submit</Form.Button>
+            <Form.Button
+              fluid
+              className="pt3"
+              type="submit"
+              value="submit"
+              onClick={this.onSubmit}
+            >
+              Submit
+            </Form.Button>
           </Form>
         </article>
       </body>

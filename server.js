@@ -20,27 +20,43 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send(database.users);
+  res.send(db.users);
 });
 
-app.post("/groupform", (req, res) => {
-  if (
-    req.body.roll1 === database.users[0].roll1 &&
-    req.body.name1 === database.users[0].name1 &&
-    req.body.email1 === database.users[0].email1 &&
-    req.body.phone1 === database.users[0].phone1 &&
-    req.body.password1 === database.users[0].password1 &&
-    req.body.domain1 === database.users[0].domain1
-  ) {
-    res.json("success");
-  } else {
-    res.status(400).json("error logging in");
+app.post("/groupform", async (req, res) => {
+  const { roll1, code1, roll2, code2, roll3, code3, guide, domain } = req.body;
+  try {
+    db("groups")
+      .insert({
+        roll1: roll1,
+        code1: code1,
+        roll2: roll2,
+        code2: code2,
+        roll3: roll3,
+        code3: code3,
+        guide: guide,
+        domain: domain,
+      })
+      .then(console.log);
+    res.status(102).send("success");
+  } catch {
+    res.status(400).send("error logging in");
   }
 });
 
+app.post("/signin", async (req, res) => {
+  const { email, password } = req.body;
+  db.select("email", "password")
+    .from("users")
+    .where("email", "=", email)
+    .where("password", "=", password)
+    .catch((err) => res.status(400).json("wrong credentials"));
+});
+
+/*
 app.post("/signin", (req, res) => {
-  db.select("email", "hash")
-    .from("login")
+  db.select("email", "password")
+    .from("users")
     .where("email", "=", req.body.email)
     .then((data) => {
       const isValid = bcrypt.compareSync(req.body.password, data[0].hash);
@@ -58,15 +74,15 @@ app.post("/signin", (req, res) => {
       }
     })
     .catch((err) => res.status(400).json("wrong credentials"));
-});
+});*/
 
-app.post("/register", (req, res) => {
-  const { roll, email, password } = req.body;
-  const hash = bcrypt.hashSync(password);
+/*app.post("/register", (req, res) => {
+  const { name, roll, phone, email, password } = req.body;
+  //const hash = bcrypt.hashSync(password);
   db.transaction((trx) => {
     trx
       .insert({
-        hash: hash,
+        password: password,
         email: email,
       })
       .into("login")
@@ -75,7 +91,11 @@ app.post("/register", (req, res) => {
         return trx("users")
           .returning("*")
           .insert({
+            name: name,
             roll: roll,
+            //branch: branch,
+            //div: div,
+            phone: phone,
             email: loginEmail[0],
             joined: new Date(),
           })
@@ -86,6 +106,28 @@ app.post("/register", (req, res) => {
       .then(trx.commit)
       .catch(trx.rollback);
   }).catch((err) => res.status(400).json("unable to register"));
+});*/
+
+app.post("/register", async (req, res) => {
+  const { name, roll, phone, email, password } = req.body;
+  try {
+    //const salt = await bcrypt.genSalt();
+    //const hashedPassword = await bcrypt.hash(password, salt);
+    db("users")
+      .insert({
+        roll: roll,
+        name: name,
+        phone: phone,
+        email: email,
+        password: password,
+        //branch: branch,
+        //div: div,
+      })
+      .then(console.log);
+    res.status(101).send("Registered");
+  } catch {
+    res.status(400).send("Error");
+  }
 });
 
 app.get("/profile/:id", (req, res) => {
