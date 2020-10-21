@@ -5,6 +5,8 @@ import Register from "./register";
 import Navigation from "./navigation";
 import MainPage from "./mainpage";
 import ForgotPass from "./forgotpass";
+import User from "./user";
+import PerCode from "./percode";
 
 import "./App.css";
 import "tachyons";
@@ -22,8 +24,11 @@ class App extends Component {
         name: "",
         roll: "",
         phone: "",
+        branch: "",
+        div: "",
         email: "",
         password: "",
+        percode: "",
       },
     };
   }
@@ -34,9 +39,12 @@ class App extends Component {
         id: data.id,
         name: data.name,
         roll: data.roll,
+        branch: data.branch,
+        div: data.div,
         phone: data.phone,
         email: data.email,
         password: data.password,
+        percode: data.percode,
       },
     });
   };
@@ -64,7 +72,9 @@ class App extends Component {
         />
         {route === "home" ? (
           <div>
+            <User name={this.state.user.name} />
             <MainPage onInputChange={this.onInputChange} />
+            <PerCode percode={this.state.user.percode} />
           </div>
         ) : route === "signin" ? (
           <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />

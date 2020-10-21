@@ -44,9 +44,8 @@ class Signin extends React.Component {
       .then((response) => response.json())
       .then((user) => {
         if (user.id) {
+          this.props.loadUser(user);
           this.props.onRouteChange("home");
-        } else {
-          this.props.onRouteChange("signin");
         }
       });
   };
@@ -102,12 +101,12 @@ class Signin extends React.Component {
               </Form>
               <Message>
                 New to us?{" "}
-                <a
+                <Link
                   onClick={() => onRouteChange("register")}
                   className="f6 link dim black db pointer"
                 >
                   Register
-                </a>
+                </Link>
                 <Link to="/forgotpass" className="f6 dim black db pointer">
                   Forgot Password?
                 </Link>

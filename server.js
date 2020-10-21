@@ -50,6 +50,16 @@ app.post("/signin", async (req, res) => {
     .from("users")
     .where("email", "=", email)
     .where("password", "=", password)
+    .then((data) => {
+      return db
+        .select("*")
+        .from("users")
+        .where("email", "=", req.body.email)
+        .then((user) => {
+          console.log(user);
+          res.json(user[0]);
+        });
+    })
     .catch((err) => res.status(400).json("wrong credentials"));
 });
 
@@ -109,7 +119,7 @@ app.post("/signin", (req, res) => {
 });*/
 
 app.post("/register", async (req, res) => {
-  const { name, roll, phone, email, password } = req.body;
+  const { name, roll, phone, email, password, branch, div } = req.body;
   try {
     //const salt = await bcrypt.genSalt();
     //const hashedPassword = await bcrypt.hash(password, salt);
@@ -118,10 +128,10 @@ app.post("/register", async (req, res) => {
         roll: roll,
         name: name,
         phone: phone,
+        branch: branch,
+        div: div,
         email: email,
         password: password,
-        //branch: branch,
-        //div: div,
       })
       .then(console.log);
     res.status(101).send("Registered");
@@ -134,7 +144,7 @@ app.get("/profile/:id", (req, res) => {
   const { id } = req.params;
   db.select("*")
     .from("users")
-    .where({ id })
+    .where({ id: id })
     .then((user) => {
       if (user.length) {
         res.json(user[0]);

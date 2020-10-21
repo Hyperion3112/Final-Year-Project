@@ -1,13 +1,14 @@
 import React from "react";
-import { Message } from "semantic-ui-react";
-import PasswordWithGenerator from "react-password-with-generator";
+import { Message, Container } from "semantic-ui-react";
 
-const PerCode = () => (
-  <div className="pa5">
-    <Message color="purple">
-      <PasswordWithGenerator passwordCustomLength={5} />
-    </Message>
-  </div>
+const PerCode = ({ percode }) => (
+  <Container text>
+    <div className="pa5">
+      <Message color="purple">
+        Your Permission Code is <b>{percode}</b>
+      </Message>
+    </div>
+  </Container>
 );
 
 export default PerCode;

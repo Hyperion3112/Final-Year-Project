@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Button,
-  Select,
   Form,
   Grid,
   Header,
@@ -10,17 +9,17 @@ import {
 } from "semantic-ui-react";
 
 /*const optionsbranch = [
-  { key: "1", text: "CMPN", value: "cmpn" },
-  { key: "2", text: "INFT", value: "inft" },
-  { key: "3", text: "EXTC", value: "extc" },
-  { key: "4", text: "ETRX", value: "etrx" },
-  { key: "5", text: "BIOM", value: "biom" },
+  { key: "cmpn", text: "CMPN", value: "cmpn" },
+  { key: "inft", text: "INFT", value: "inft" },
+  { key: "extc", text: "EXTC", value: "extc" },
+  { key: "etrx", text: "ETRX", value: "etrx" },
+  { key: "biom", text: "BIOM", value: "biom" },
 ];
 
 const optionsdiv = [
-  { key: "A", text: "A", value: "a" },
-  { key: "B", text: "B", value: "b" },
-  { key: "C", text: "C", value: "c" },
+  { key: "a", text: "A", value: "a" },
+  { key: "b", text: "B", value: "b" },
+  { key: "c", text: "C", value: "c" },
 ];*/
 
 class Register extends React.Component {
@@ -29,8 +28,8 @@ class Register extends React.Component {
     this.state = {
       name: "",
       roll: "",
-      //branch: "",
-      //div: "",
+      branch: "",
+      div: "",
       phone: "",
       email: "",
       password: "",
@@ -47,7 +46,7 @@ class Register extends React.Component {
       roll: event.target.value,
     });
   };
-  /*onBranchChange = (event) => {
+  onBranchChange = (event) => {
     this.setState({
       branch: event.target.value,
     });
@@ -56,7 +55,7 @@ class Register extends React.Component {
     this.setState({
       div: event.target.value,
     });
-  };*/
+  };
   onPhoneChange = (event) => {
     this.setState({
       phone: event.target.value,
@@ -81,8 +80,8 @@ class Register extends React.Component {
       body: JSON.stringify({
         name: this.state.name,
         roll: this.state.roll,
-        //branch: this.state.branch,
-        //div: this.state.div,
+        branch: this.state.branch,
+        div: this.state.div,
         phone: this.state.phone,
         email: this.state.email,
         password: this.state.password,
@@ -131,6 +130,29 @@ class Register extends React.Component {
                   onChange={this.onRollChange}
                 />
               </Form.Field>
+
+              <Form.Field required>
+                <label>Branch</label>
+                <input
+                  placeholder="Branch"
+                  type="text"
+                  name="branch"
+                  id="branch"
+                  onChange={this.onBranchChange}
+                />
+              </Form.Field>
+
+              <Form.Field required>
+                <label>Division</label>
+                <input
+                  placeholder="Division"
+                  type="text"
+                  name="div"
+                  id="div"
+                  onChange={this.onDivChange}
+                />
+              </Form.Field>
+
               <Form.Field required>
                 <label>Phone Number</label>
                 <input
@@ -169,14 +191,17 @@ class Register extends React.Component {
                 size="large"
                 type="submit"
                 value="Register"
-                onSubmit={this.onSubmit}
-                disabled={
+                onClick={this.onSubmit}
+                //onClick={this.props.onRouteChange("signin")}
+                /*disabled={
                   !this.state.name ||
                   !this.state.roll ||
                   !this.state.phone ||
                   !this.state.email ||
+                  !this.state.branch ||
+                  !this.state.div ||
                   !this.state.password
-                }
+                }*/
               >
                 Register
               </Button>
