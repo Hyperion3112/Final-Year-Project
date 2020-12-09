@@ -1,6 +1,7 @@
 import React from "react";
-import { Form, Message } from "semantic-ui-react";
+import { Form, Message, Popup, Button, Container } from "semantic-ui-react";
 import "./signin.css";
+import User1 from "./user1";
 
 const options = [
   { key: "Al", text: "Algorithm", value: "Algorithm" },
@@ -84,8 +85,26 @@ class GroupForm extends React.Component {
       Code3: "",
       Domain: "",
       Guide: "",
+      user: {
+        id: "",
+        name: "",
+        roll: "",
+        password: "",
+        percode: "",
+      },
     };
   }
+
+  loadUser = (data) => {
+    this.setState({
+      user: {
+        id: data.id,
+        name: data.name,
+        roll: data.roll,
+        percode: data.percode,
+      },
+    });
+  };
 
   onRoll1Change = (event) => {
     this.setState({ Roll1: event.target.value });
@@ -149,7 +168,20 @@ class GroupForm extends React.Component {
           </p>
         </Message>
         <article className="pb5">
+          <Popup
+            trigger={<Button icon="add" content="Add a member" />}
+            content="Make sure you have the member's permission code"
+            on="hover"
+          />
           <Form>
+            <p classname="fw7 lh-copy f4">Student 1</p>
+            <p className="fw7 lh-copy f5">
+              <User1
+                name={this.state.user.name}
+                roll={this.state.user.roll}
+                percode={this.state.user.percode}
+              />
+            </p>
             <p className="fw7 lh-copy f4 inaline">Enter Details of Student 1</p>
             <Form.Group widths="equal">
               <Form.Input

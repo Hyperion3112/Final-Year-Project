@@ -72,6 +72,14 @@ class Register extends React.Component {
     });
   };
 
+  submitHandler = () => {
+    if (Error) {
+      this.setState({ formError: true, formSuccess: false });
+    } else {
+      this.setState({ formError: false, formSuccess: true });
+    }
+  };
+
   onSubmit = () => {
     console.log(this.state);
     fetch("http://localhost:3000/register", {
@@ -108,7 +116,12 @@ class Register extends React.Component {
           <Header as="h2" color="black" textAlign="center">
             Register
           </Header>
-          <Form size="large" error={Boolean(err)}>
+          <Form
+            success={this.state.formSuccess}
+            error={this.state.formError}
+            size="large"
+            error={Boolean(err)}
+          >
             <Segment raised>
               <Form.Field required>
                 <label>Full Name</label>
@@ -192,7 +205,7 @@ class Register extends React.Component {
                 type="submit"
                 value="Register"
                 onClick={this.onSubmit}
-                //onClick={this.props.onRouteChange("signin")}
+                //onRouteChange={this.props.onRouteChange("signin")}
                 /*disabled={
                   !this.state.name ||
                   !this.state.roll ||
@@ -206,6 +219,11 @@ class Register extends React.Component {
                 Register
               </Button>
             </Segment>
+            <Message
+              success
+              header="Registered Successfully"
+              //content="Thank you for your contribution."
+            />
             {err && <Message header="Error" content={err.message} error />}
           </Form>
         </Grid.Column>
